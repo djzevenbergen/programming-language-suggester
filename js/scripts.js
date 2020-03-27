@@ -68,6 +68,8 @@ var computeLanguage = function (aCount, bCount, cCount, dCount) {
 
 
 $(document).ready(function () {
+  var modal = document.getElementById("myModal");
+  var span = document.getElementById("close");
   $("#startButton").click(function () {
     $("#startButton").hide();
     $("#questionOne").slideDown();
@@ -130,9 +132,21 @@ $(document).ready(function () {
 
     var answers = [one, two, three, four, five, six, seven];
 
+    modal.style.display = "block";
+
+    $("#results").text(name + ", " + compareAnswers(countAnswers(answers)));
 
 
-    alert(name + ", " + compareAnswers(countAnswers(answers)));
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    //alert(name + ", " + compareAnswers(countAnswers(answers)));
 
 
   });
