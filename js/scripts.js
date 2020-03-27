@@ -30,40 +30,32 @@ var compareAnswers = function (counts) {
   var e = counts[4];
   var maxCount = 0;
   var message = "";
+  var messageAndLink = []
   if (a >= b && a >= c && a >= d && a >= e) {
     maxCount = a;
     message = "with " + maxCount + " a's, you're a wild one and should choose Ruby!";
+    //messageAndLink[message, "<a href link='https://poignant.guide/book/chapter-1.html'>Ruby Resource</a>"];
   } else if (b >= a && b >= c && b >= d && b >= e) {
     maxCount = b;
     message = "with " + maxCount + " b's, you're a syntax lover and should choose Java!";
+    //messageAndLink[message, "<a href link='https://www.learnjavaonline.org/'>Java Resource</a>"];
   } else if (c >= a && c >= b && c >= d && c >= e) {
     maxCount = c;
     message = "with " + maxCount + " c's, you're a wandering soul and should choose Python!";
+    //messageAndLink[message, "<a href link='https://www.python.org/about/gettingstarted/'>Python Resource</a>"];
   } else if (d >= a && d >= b && d >= c && d >= e) {
     maxCount = d;
     message = "with " + maxCount + " d's, you're a robot and should choose binary!";
-
+    //messageAndLink[message, "<a href link='https://www.hl7.org/fhir/binary.html'>Binary Resource</a>"];
   } else {
     message = "You didn't answer any questions! You must learn C!"
+    //messageAndLink[message, "<a href link='https://www.learn-c.org/'>C Resource</a>"];
+
   }
 
   return message;
 
 }
-
-
-
-var computeLanguage = function (aCount, bCount, cCount, dCount) {
-  //if more a's than anything, they like python
-
-  //else if more b's than anything, they like Java
-
-  // else if more c's than anything, they like ruby
-
-  // else if more d's, they are inhuman and must learn machine code
-
-
-};
 
 
 
@@ -134,7 +126,12 @@ $(document).ready(function () {
 
     modal.style.display = "block";
 
-    $("#results").text(name + ", " + compareAnswers(countAnswers(answers)));
+    //var messageFinal = [];
+    //messageFinal = compareAnswers(countAnswers(anwers));
+
+    $("#results").text(compareAnswers(countAnswers(answers)));
+    //$("#message").text(messageFinal[0]);
+    ///$("#res").text(messageFinal[1]);
 
 
     span.onclick = function () {
@@ -146,7 +143,7 @@ $(document).ready(function () {
         modal.style.display = "none";
       }
     }
-    //alert(name + ", " + compareAnswers(countAnswers(answers)));
+    //
 
 
   });
