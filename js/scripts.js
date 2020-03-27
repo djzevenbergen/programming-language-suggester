@@ -22,6 +22,35 @@ var countAnswers = function (answers) {
   return count;
 }
 
+var compareAnswers = function (counts) {
+  var a = counts[0];
+  var b = counts[1];
+  var c = counts[2];
+  var d = counts[3];
+  var e = counts[4];
+  var maxCount = 0;
+  var message = "";
+  if (a >= b && a >= c && a >= d && a >= e) {
+    maxCount = a;
+    message = "with " + maxCount + " a's, you're a wild one and should choose Ruby!";
+  } else if (b >= a && b >= c && b >= d && b >= e) {
+    maxCount = b;
+    message = "with " + maxCount + " b's, you're a syntax lover and should choose Java!";
+  } else if (c >= a && c >= b && c >= d && c >= e) {
+    maxCount = c;
+    message = "with " + maxCount + " c's, you're a wandering soul and should choose Python!";
+  } else if (d >= a && d >= b && d >= c && d >= e) {
+    maxCount = d;
+    message = "with " + maxCount + " d's, you're a robot and should choose binary!";
+
+  } else {
+    message = "You didn't answer any questions! You must learn C!"
+  }
+
+  return message;
+
+}
+
 
 
 var computeLanguage = function (aCount, bCount, cCount, dCount) {
@@ -103,7 +132,7 @@ $(document).ready(function () {
 
 
 
-    alert(countAnswers(answers));
+    alert(name + ", " + compareAnswers(countAnswers(answers)));
 
 
   });
