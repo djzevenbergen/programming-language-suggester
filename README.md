@@ -6,7 +6,7 @@
 
 ## Description
 
-_This exercise uses the jQuery library, HTML, CSS, Bootstrap, and Javascript to create an interactive quiz webpage. It also allows the user to save the results as a .txt file_
+_This exercise uses the jQuery library, HTML, CSS, Bootstrap, and Javascript to create an interactive quiz webpage. It provides resources, with highlights around the suggested resources, dependent upon quiz performance. If you click on the last "r" in the word "Suggester" in the header, you will be prompted to enter a password (currently '1234'), with secret access to a csv of all former users._
 
 ## Setup/Installation Requirements
 

@@ -1,3 +1,6 @@
+var name = "";
+var lang = "";
+
 var countAnswers = function (answers) {
   var a = 0;
   var b = 0;
@@ -29,35 +32,50 @@ var compareAnswers = function (counts) {
   var e = counts[4];
   var maxCount = 0;
   var message = "";
+
   if (a >= b && a >= c && a >= d && a >= e) {
     maxCount = a;
-    message = "With " + maxCount + " a's, you're a wild one and should choose Ruby!";
+    lang = "Ruby";
+    message = "With " + maxCount + " a's, you're a wild one and should choose " + lang;
     $("#linkOne").prepend("**");
     $("#linkOne").append("**");
     $
   } else if (b >= a && b >= c && b >= d && b >= e) {
     maxCount = b;
-    message = "With " + maxCount + " b's, you're a syntax lover and should choose Java!";
+    lang = "Java"
+    message = "With " + maxCount + " b's, you're a syntax lover and should choose " + lang;
     $("#linkTwo").prepend("**");
     $("#linkTwo").append("**");
   } else if (c >= a && c >= b && c >= d && c >= e) {
     maxCount = c;
-    message = "With " + maxCount + " c's, you're a wandering soul and should choose Python!";
+    lang = "Python"
+    message = "With " + maxCount + " c's, you're a wandering soul and should choose " + lang;
     $("#linkThree").prepend("**");
     $("#linkThree").append("**");
   } else if (d >= a && d >= b && d >= c && d >= e) {
     maxCount = d;
-    message = "With " + maxCount + " d's, you're a robot and should choose binary!";
+    lang = "binary"
+    message = "With " + maxCount + " d's, you're a robot and should choose " + lang;
     $("#linkFour").prepend("**");
     $("#linkFour").append("**");
   } else {
-    message = "You didn't answer enough questions! Your punishment is learning C!"
+    lang = "C"
+    message = "You didn't answer enough questions! Your punishment is learning " + lang;
     $("#linkFive").prepend("**");
     $("#linkFive").append("**");
   }
   return message;
 }
 
+
+var writeFiles = function writeFile(nm, lg) {
+  var fso, f, r;
+  var ForWriting = 2;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  f = fso.OpenTextFile("files/users.txt", ForWriting, true);
+  f.Write(nm, lg);
+  f.Close();
+}
 
 
 $(document).ready(function () {
@@ -162,9 +180,20 @@ $(document).ready(function () {
       window.location.reload();
     });
 
+  });
 
+
+
+  $("#secret").click(function () {
+    var pWord = prompt('Please enter the password. (it is "1234")');
+    if (pWord === "1234") {
+      $("#uList").toggleClass("userList");
+    } else {
+      alert("Sorry, wrong password.");
+    }
 
   });
+
 
 
 
