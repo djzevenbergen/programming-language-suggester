@@ -26,6 +26,23 @@ body {
  
 }
 
+.panel {
+  margin-top: 5%;
+  margin-right: 20%;
+  margin-left: 20%;
+  background-color: rgba(147, 228, 224, 0.671);
+  border: 5px solid black;
+
+}
+
+.panel > .panel-heading {
+  text-align: center;
+  background-color: peru;
+  border-bottom-width: 5px;
+  border-bottom-color: black;
+}
+
+
 
 
 
