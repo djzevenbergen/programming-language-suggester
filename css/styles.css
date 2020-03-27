@@ -4,6 +4,7 @@
   padding: 4px;
   background-color: peru;
   text-align: center;
+  margin-top: 10px;
 }
 
 body {
@@ -33,6 +34,7 @@ body {
   margin-left: 20%;
   background-color: rgba(147, 228, 224, 0.671);
   border: 5px solid black;
+  height: 250px;
 
 }
 
@@ -70,6 +72,13 @@ body {
   text-align: center;
 }
 
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
 
 .close {
   color: rebeccapurple;

@@ -5,7 +5,6 @@ var countAnswers = function (answers) {
   var d = 0;
   var e = 0;
   for (i = 0; i < answers.length; i++) {
-
     if (answers[i] === 1) {
       a += 1;
     } else if (answers[i] === 2) {
@@ -30,7 +29,6 @@ var compareAnswers = function (counts) {
   var e = counts[4];
   var maxCount = 0;
   var message = "";
-  var messageAndLink = []
   if (a >= b && a >= c && a >= d && a >= e) {
     maxCount = a;
     message = "With " + maxCount + " a's, you're a wild one and should choose Ruby!";
@@ -56,11 +54,8 @@ var compareAnswers = function (counts) {
     message = "You didn't answer enough questions! Your punishment is learning C!"
     $("#linkFive").prepend("**");
     $("#linkFive").append("**");
-
   }
-
   return message;
-
 }
 
 
@@ -117,10 +112,6 @@ $(document).ready(function () {
   });
 
   $("#qEight").submit(function (event) {
-    event.preventDefault();
-    $("#questionEight").slideUp();
-    $("#viewResults").slideDown();
-    //alert("quiz finished");
     var one = parseInt($('input:radio[name="yeet"]:checked').val());
     var two = parseInt($('input:radio[name="greet"]:checked').val());
     var three = parseInt($('input:radio[name="zombie"]:checked').val());
@@ -129,18 +120,14 @@ $(document).ready(function () {
     var six = parseInt($('input:radio[name="president"]:checked').val());
     var seven = parseInt($('input:radio[name="toDo"]:checked').val());
     var name = $("input#uName").val();
-
     var answers = [one, two, three, four, five, six, seven];
 
-
-
-    //var messageFinal = [];
-    //messageFinal = compareAnswers(countAnswers(anwers));
+    event.preventDefault();
+    $("#questionEight").slideUp();
+    $("#viewResults").slideDown();
 
     $("#nameDisplay").text(name);
     $("#results").text(compareAnswers(countAnswers(answers)));
-    //$("#message").text(messageFinal[0]);
-    ///$("#res").text(messageFinal[1]);
 
     modal.style.display = "block";
 
@@ -152,7 +139,6 @@ $(document).ready(function () {
     window.onclick = function (event) {
       if (event.target == modal) {
         modal.style.display = "none";
-
       }
     }
 
