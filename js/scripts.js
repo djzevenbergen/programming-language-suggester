@@ -34,22 +34,28 @@ var compareAnswers = function (counts) {
   if (a >= b && a >= c && a >= d && a >= e) {
     maxCount = a;
     message = "With " + maxCount + " a's, you're a wild one and should choose Ruby!";
-    $("#linkOne").show();
+    $("#linkOne").prepend("**");
+    $("#linkOne").append("**");
+    $
   } else if (b >= a && b >= c && b >= d && b >= e) {
     maxCount = b;
     message = "With " + maxCount + " b's, you're a syntax lover and should choose Java!";
-    $("#linkTwo").show();
+    $("#linkTwo").prepend("**");
+    $("#linkTwo").append("**");
   } else if (c >= a && c >= b && c >= d && c >= e) {
     maxCount = c;
     message = "With " + maxCount + " c's, you're a wandering soul and should choose Python!";
-    $("#linkThree").show();
+    $("#linkThree").prepend("**");
+    $("#linkThree").append("**");
   } else if (d >= a && d >= b && d >= c && d >= e) {
     maxCount = d;
     message = "With " + maxCount + " d's, you're a robot and should choose binary!";
-    $("#linkFour").show();
+    $("#linkFour").prepend("**");
+    $("#linkFour").append("**");
   } else {
-    message = "You didn't answer any questions! You must learn C!"
-    $("#linkFive").show();
+    message = "You didn't answer enough questions! Your punishment is learning C!"
+    $("#linkFive").prepend("**");
+    $("#linkFive").append("**");
 
   }
 
@@ -110,8 +116,10 @@ $(document).ready(function () {
     $("#questionEight").slideDown();
   });
 
-  $("#qEight").submit(function (even) {
-    even.preventDefault();
+  $("#qEight").submit(function (event) {
+    event.preventDefault();
+    $("#questionEight").slideUp();
+    $("#viewResults").slideDown();
     //alert("quiz finished");
     var one = parseInt($('input:radio[name="yeet"]:checked').val());
     var two = parseInt($('input:radio[name="greet"]:checked').val());
@@ -124,7 +132,7 @@ $(document).ready(function () {
 
     var answers = [one, two, three, four, five, six, seven];
 
-    modal.style.display = "block";
+
 
     //var messageFinal = [];
     //messageFinal = compareAnswers(countAnswers(anwers));
@@ -134,17 +142,40 @@ $(document).ready(function () {
     //$("#message").text(messageFinal[0]);
     ///$("#res").text(messageFinal[1]);
 
+    modal.style.display = "block";
 
     span.onclick = function () {
       modal.style.display = "none";
+      //window.location.reload();
     }
 
     window.onclick = function (event) {
       if (event.target == modal) {
         modal.style.display = "none";
+
       }
     }
-    //
+
+    $("#viewAgain").click(function () {
+      modal.style.display = "block";
+
+      span.onclick = function () {
+        modal.style.display = "none";
+        //window.location.reload();
+      }
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+
+        }
+      }
+    });
+
+    $("#takeAgain").click(function () {
+      window.location.reload();
+    });
+
 
 
   });

@@ -6,33 +6,19 @@
 
 ## Description
 
-_This exercise uses the jQuery library, HTML, CSS, Bootstrap, and Javascript to create an interactive webpage._
+_This exercise uses the jQuery library, HTML, CSS, Bootstrap, and Javascript to create an interactive quiz webpage. It also allows the user to save the results as a .txt file_
 
 ## Setup/Installation Requirements
 
-* Clone this repository.
-* Navigate to index.html file.
-* Right click and open in the browser of your choice.
+* Download entire repo
+* Open index.html in browser
+* If it doesn't work, it may require having Bootstrap 3.3.7 CSS file in CSS folder and jQuery 3.4.1 JS file in JS folder
 
-
-## Known Bugs
-
-No known bugs at this time.
-
-## Support and contact details
-
-If you have any suggestions or questions contact us at djzevenbergen@gmail.com
-## Technologies Used
-
-HTML
-CSS
-Bootstrap
-Git and GitHub
-JavaScript
-jQuery
 
 ### License
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2020 **_DJ Zevenbergen_**
+Copyright (c) 2020 
+
+**_DJ Zevenbergen_**
