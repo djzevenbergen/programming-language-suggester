@@ -1,10 +1,11 @@
 var countAnswers = function (answers) {
+  var a = 0;
+  var b = 0;
+  var c = 0;
+  var d = 0;
+  var e = 0;
   for (i = 0; i < answers.length; i++) {
-    var a = 0;
-    var b = 0;
-    var c = 0;
-    var d = 0;
-    var e = 0;
+
     if (answers[i] === 1) {
       a += 1;
     } else if (answers[i] === 2) {
@@ -16,9 +17,9 @@ var countAnswers = function (answers) {
     } else {
       e += 1;
     }
-    var count = [a, b, c, d, e];
-    return count;
   }
+  var count = [a, b, c, d, e];
+  return count;
 }
 
 
@@ -89,11 +90,6 @@ $(document).ready(function () {
   $("#qEight").submit(function (even) {
     even.preventDefault();
     //alert("quiz finished");
-    var a = 0;
-    var b = 0;
-    var c = 0;
-    var d = 0;
-    var e = 0;
     var one = parseInt($('input:radio[name="yeet"]:checked').val());
     var two = parseInt($('input:radio[name="greet"]:checked').val());
     var three = parseInt($('input:radio[name="zombie"]:checked').val());
@@ -107,7 +103,7 @@ $(document).ready(function () {
 
 
 
-    alert(counts);
+    alert(countAnswers(answers));
 
 
   });
