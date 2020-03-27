@@ -33,23 +33,23 @@ var compareAnswers = function (counts) {
   var messageAndLink = []
   if (a >= b && a >= c && a >= d && a >= e) {
     maxCount = a;
-    message = "with " + maxCount + " a's, you're a wild one and should choose Ruby!";
-    //messageAndLink[message, "<a href link='https://poignant.guide/book/chapter-1.html'>Ruby Resource</a>"];
+    message = "With " + maxCount + " a's, you're a wild one and should choose Ruby!";
+    $("#linkOne").show();
   } else if (b >= a && b >= c && b >= d && b >= e) {
     maxCount = b;
-    message = "with " + maxCount + " b's, you're a syntax lover and should choose Java!";
-    //messageAndLink[message, "<a href link='https://www.learnjavaonline.org/'>Java Resource</a>"];
+    message = "With " + maxCount + " b's, you're a syntax lover and should choose Java!";
+    $("#linkTwo").show();
   } else if (c >= a && c >= b && c >= d && c >= e) {
     maxCount = c;
-    message = "with " + maxCount + " c's, you're a wandering soul and should choose Python!";
-    //messageAndLink[message, "<a href link='https://www.python.org/about/gettingstarted/'>Python Resource</a>"];
+    message = "With " + maxCount + " c's, you're a wandering soul and should choose Python!";
+    $("#linkThree").show();
   } else if (d >= a && d >= b && d >= c && d >= e) {
     maxCount = d;
-    message = "with " + maxCount + " d's, you're a robot and should choose binary!";
-    //messageAndLink[message, "<a href link='https://www.hl7.org/fhir/binary.html'>Binary Resource</a>"];
+    message = "With " + maxCount + " d's, you're a robot and should choose binary!";
+    $("#linkFour").show();
   } else {
     message = "You didn't answer any questions! You must learn C!"
-    //messageAndLink[message, "<a href link='https://www.learn-c.org/'>C Resource</a>"];
+    $("#linkFive").show();
 
   }
 
@@ -129,6 +129,7 @@ $(document).ready(function () {
     //var messageFinal = [];
     //messageFinal = compareAnswers(countAnswers(anwers));
 
+    $("#nameDisplay").text(name);
     $("#results").text(compareAnswers(countAnswers(answers)));
     //$("#message").text(messageFinal[0]);
     ///$("#res").text(messageFinal[1]);

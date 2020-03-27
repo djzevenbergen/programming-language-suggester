@@ -43,6 +43,10 @@ body {
   border-bottom-color: black;
 }
 
+.info h2 {
+  display: none;
+}
+
 
 .modal {
   display: none; 
